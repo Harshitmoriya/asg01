@@ -1,0 +1,148 @@
+/* Reset default margins and padding for the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+  }
+  
+  /* Root container for your React app */
+  #root {
+    text-align: center;
+  }
+  
+  /* Carousel Heading */
+  .carousel-heading {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 83px;
+    color: rgba(16, 16, 16, 1);
+  }
+  
+  /* Carousel Container */
+  .carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Carousel */
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    animation: rotate-fade 0.5s ease;
+  }
+  
+  /* Carousel Slide */
+  .carousel-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  /* Active Slide */
+  .carousel-slide.active {
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  
+ /* Animating the Lottie Animation */
+ .lottie-animation {
+    position: relative;
+    animation: rotateLottie 1.4s ease-in-out;
+    transform-origin: bottom left;
+    overflow: hidden;
+    
+  }
+  
+  @keyframes rotateLottie {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+
+  /* Animating the Lottie Animation for Next Button */
+.lottie-animation.next {
+    position: relative;
+    animation: rotateLottieNext 0.7s ease-in-out;
+    transform-origin: right center;
+  }
+  
+  /* @keyframes rotateLottieNext {
+    0% {
+      transform: scale(1) rotate(90deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  } */
+  
+  /* Animating the Lottie Animation for Previous Button */
+  .lottie-animation.prev {
+    position: relative;
+    animation: rotateLottiePrev 0.7s ease-in-out;
+    transform-origin: left center;
+  }
+  
+  /* @keyframes rotateLottiePrev {
+     0% {
+      transform: scale(1) rotate(-90deg);
+    } 
+    100% {
+       transform: scale(1) rotate(0deg); 
+    }
+  } */
+  
+  /* Slide Content */
+  .slide-content {
+    opacity: 1;
+    transition: opacity 0.5s;
+    color: #59595D;
+    margin-bottom: 10px;
+    width: 100%;
+    /* height: 130px; */
+  }
+  
+  /* Previous and Next Buttons */
+  button {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 10px;
+    margin-top: 17px;
+  }
+  
+  /* Disabled Button */
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  /* Adding Transition for Slide Content and Slide Head */
+.slide-content, .slide-heading {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .carousel-slide.active .slide-content, .carousel-slide.active .slide-heading {
+    opacity: 1;
+  }
