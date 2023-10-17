@@ -63,7 +63,7 @@ body {
  .lottie-animation {
     position: relative;
     animation: rotateLottie 1.4s ease-in-out;
-    transform-origin: bottom left;
+    transform-origin: bottom center;
     overflow: hidden;
     
   }
